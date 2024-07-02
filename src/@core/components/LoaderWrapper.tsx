@@ -8,6 +8,7 @@ import { ReactNode, useEffect } from "react";
 
 // ** Loader Import
 import NProgress from "nprogress";
+import "nprogress/nprogress.css";
 
 const LoaderWrapper = ({ children }: { children: ReactNode }) => {
   const pathName = usePathname();

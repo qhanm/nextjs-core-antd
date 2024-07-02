@@ -1,3 +1,5 @@
+"use client";
+
 // ** react
 import { ReactNode, createContext, useEffect, useState } from "react";
 

@@ -1,7 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import LoaderWrapper from "src/@core/components/LoaderWrapper";
+import {
+  AppContextProvider,
+  AppContextWrapper,
+} from "src/@core/context/AppContext";
+import { Suspense } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +22,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <LoaderWrapper>{children}</LoaderWrapper>
+        <LoaderWrapper>
+          <AppContextProvider>
+            <AppContextWrapper>
+              <Suspense fallback={<>loading</>}>{children}</Suspense>
+            </AppContextWrapper>
+          </AppContextProvider>
+        </LoaderWrapper>
       </body>
     </html>
   );
