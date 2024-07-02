@@ -17,7 +17,7 @@ import ThemeComponent from "../theme/ThemeComponent";
 import { lightTheme, darkTheme } from "src/styles/theme";
 
 const initialSetting: TSetting = {
-  mode: MODE_ENUM.LIGHT,
+  mode: MODE_ENUM.DARK,
 };
 
 const initialAppContext: TAppContext = {
